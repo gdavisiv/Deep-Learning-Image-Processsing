@@ -13,3 +13,14 @@ class SimpleDatasetLoader:
         #if there is no preprocessors, initialize it as an empty list
         if self.preprocessors is None:
             self.preprocessors = []
+            
+        #This is our load method: needs a single paramater -> imagePaths, a list of 
+        #file paths to images in our dataset this is stored on disk
+        def load(self, imagePaths, verbose=-1):
+            #Initialize the list of features and labels
+            data = []
+            labels = []
+            
+            #Loop over the input images
+            for(i, imagePath) in enumerate(imagePaths):
+                
