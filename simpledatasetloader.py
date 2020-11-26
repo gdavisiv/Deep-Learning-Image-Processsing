@@ -32,9 +32,11 @@ class SimpleDatasetLoader:
                 #check to see if preprocessors are not NONE
                 if self.preprocessors is not None:
                     
+                    #Loops through the preprocessors and apply to each image
                     for p in self.preprocessors:
                         image = p.preprocess(image)
                         
+                #Treat each image as a 'feature vector' by updating the list + labels        
                 data.append(image)
                 labels.apprend(label)
                 
